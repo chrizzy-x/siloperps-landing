@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Siloperps – Decentralized Perps Trading</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #1a1400, #000000 70%);
+      color: #f5d98b;
+      overflow: hidden;
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      padding: 20px;
+      z-index: 3;
+    }
+
+    .logo {
+      width: 160px;
+      margin-bottom: 30px;
+      filter: drop-shadow(0 0 20px rgba(245,217,139,0.6));
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: #ffd977;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #e8d59a;
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 32px;
+      border-radius: 999px;
+      border: 1px solid #ffd977;
+      background: linear-gradient(135deg, #ffd977, #b58b00);
+      color: #000;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease;
+      text-decoration: none;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: #ffd977;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(255,217,119,0.35);
+    }
+
+    /* Falling logos */
+    .rain {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .drop {
+      position: absolute;
+      top: -120px;
+      width: 48px;
+      opacity: 0.15;
+      animation: fall linear infinite;
+      filter: drop-shadow(0 0 10px rgba(255,217,119,0.4));
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(120vh) rotate(360deg);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .logo {
+        width: 120px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Falling layer -->
+  <div class="rain" id="rain"></div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <!-- Replace src with your real logo path -->
+      <img src="logo.png" alt="Siloperps Logo" class="logo" />
+
+      <h1>Trade Perpetuals at Lightning Speed</h1>
+      <p>
+        Siloperps is a next-generation decentralized exchange for perpetual
+        futures. Wallet-based identity, public trade chats, and real-time
+        execution—on chain.
+      </p>
+
+      <div class="buttons">
+        <a href="https://dex.siloperps.com" class="btn">Launch App</a>
+        <a href="#" class="btn secondary">Join Community</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const rain = document.getElementById("rain");
+    const LOGO_SRC = "logo.png"; // put your logo file in the same folder
+
+    function createDrop() {
+      const img = document.createElement("img");
+      img.src = LOGO_SRC;
+      img.className = "drop";
+
+      const size = Math.random() * 30 + 20;
+      img.style.width = size + "px";
+      img.style.left = Math.random() * 100 + "vw";
+
+      const duration = Math.random() * 10 + 8;
+      img.style.animationDuration = duration + "s";
+
+      rain.appendChild(img);
+
+      setTimeout(() => {
+        img.remove();
+      }, duration * 1000);
+    }
+
+    setInterval(createDrop, 300);
+  </script>
+</body>
+</html>
