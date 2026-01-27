@@ -83,7 +83,6 @@
       box-shadow: 0 10px 40px rgba(255,217,119,0.35);
     }
 
-    /* Falling logos */
     .rain {
       position: fixed;
       inset: 0;
@@ -116,12 +115,10 @@
 </head>
 
 <body>
-  <!-- Falling layer -->
   <div class="rain" id="rain"></div>
 
   <section class="hero">
     <div class="hero-content">
-      <!-- Replace src with your real logo path -->
       <img src="logo.png" alt="Siloperps Logo" class="logo" />
 
       <h1>Trade Perpetuals at Lightning Speed</h1>
@@ -132,7 +129,14 @@
       </p>
 
       <div class="buttons">
-        <a href="https://dex.siloperps.com" class="btn">Launch App</a>
+        <a
+          href="https://siloperps.com/perp/PERP_ETH_USDC"
+          class="btn"
+          target="_blank"
+        >
+          Launch App
+        </a>
+
         <a href="#" class="btn secondary">Join Community</a>
       </div>
     </div>
@@ -140,7 +144,7 @@
 
   <script>
     const rain = document.getElementById("rain");
-    const LOGO_SRC = "logo.png"; // put your logo file in the same folder
+    const LOGO_SRC = "logo.png";
 
     function createDrop() {
       const img = document.createElement("img");
