@@ -24,6 +24,8 @@
       padding: 80px 20px;
       display: flex;
       justify-content: center;
+      position: relative;
+      z-index: 2;
     }
 
     .container {
@@ -31,11 +33,17 @@
       width: 100%;
     }
 
+    /* HERO */
     .hero {
       min-height: 100vh;
-      align-items: center;
       text-align: center;
       padding-top: 120px;
+    }
+
+    .hero-logo {
+      width: 140px;
+      margin-bottom: 30px;
+      filter: drop-shadow(0 0 20px rgba(255,217,119,.6));
     }
 
     .hero h1 {
@@ -81,20 +89,61 @@
       box-shadow: 0 10px 40px rgba(255,217,119,0.35);
     }
 
-    .hero-image {
+    /* HERO STAGE */
+    .hero-stage {
+      position: relative;
       width: 100%;
       max-width: 1000px;
-      margin: 0 auto;
-      border-radius: 20px;
-      box-shadow: 0 40px 120px rgba(0,0,0,.8);
+      margin: 0 auto 60px;
+      height: 520px;
     }
 
+    .ui-main {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      display: block;
+      border-radius: 18px;
+      box-shadow: 0 40px 120px rgba(0,0,0,.85);
+      z-index: 2;
+    }
+
+    .ui-float {
+      position: absolute;
+      top: 60%;
+      width: 260px;
+      border-radius: 16px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.9);
+      opacity: 0.9;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    .ui-float.left {
+      left: -120px;
+    }
+
+    .ui-float.right {
+      right: -120px;
+    }
+
+    @media (max-width: 900px) {
+      .ui-float {
+        display: none;
+      }
+      .hero-stage {
+        height: auto;
+      }
+    }
+
+    /* STATS */
     .stats {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 40px;
       text-align: center;
-      margin-top: 80px;
+      margin-top: 40px;
     }
 
     .stat h3 {
@@ -153,14 +202,39 @@
       color: #8c7a45;
       font-size: 0.9rem;
     }
+
+    /* FALLING LOGOS */
+    .rain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .drop {
+      position: absolute;
+      top: -120px;
+      opacity: 0.12;
+      animation: fall linear infinite;
+      filter: drop-shadow(0 0 10px rgba(255,217,119,0.4));
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(120vh) rotate(360deg);
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
+  <div class="rain" id="rain"></div>
+
   <section class="hero">
     <div class="container">
+      <img src="logo.png" class="hero-logo" alt="Siloperps Logo" />
+
       <h1>Trading unlocked for everyone</h1>
       <p>
         A next-generation decentralized exchange for perpetual futures.
@@ -168,11 +242,7 @@
       </p>
 
       <div class="buttons">
-        <a
-          href="https://siloperps.com/perp/PERP_ETH_USDC"
-          class="btn"
-          target="_blank"
-        >
+        <a href="https://siloperps.com/perp/PERP_ETH_USDC" class="btn" target="_blank">
           Launch App
         </a>
         <a href="https://t.me/" class="btn secondary" target="_blank">
@@ -180,7 +250,11 @@
         </a>
       </div>
 
-      <img src="landing.png" alt="Trading UI" class="hero-image" />
+      <div class="hero-stage">
+        <img src="ui.png" class="ui-main" alt="Main UI" />
+        <img src="ui.png" class="ui-float left" alt="Side UI" />
+        <img src="ui.png" class="ui-float right" alt="Side UI" />
+      </div>
 
       <div class="stats">
         <div class="stat">
@@ -199,14 +273,12 @@
     </div>
   </section>
 
-  <!-- TAGLINE -->
   <section>
     <div class="container">
-      <div class="tagline">Less UI. More VOOL.</div>
+      <div class="tagline">Less UI. More Siloperps.</div>
     </div>
   </section>
 
-  <!-- FEATURES -->
   <section>
     <div class="container">
       <div class="features">
@@ -226,16 +298,11 @@
     </div>
   </section>
 
-  <!-- CTA -->
   <section>
     <div class="container cta">
-      <h2>The VOOL ahead</h2>
+      <h2>The Siloperps ahead</h2>
       <div class="buttons">
-        <a
-          href="https://siloperps.com/perp/PERP_ETH_USDC"
-          class="btn"
-          target="_blank"
-        >
+        <a href="https://siloperps.com/perp/PERP_ETH_USDC" class="btn" target="_blank">
           Launch App
         </a>
       </div>
@@ -245,6 +312,29 @@
   <footer>
     © 2026 Siloperps. All rights reserved.
   </footer>
+
+  <script>
+    const rain = document.getElementById("rain");
+    const LOGO_SRC = "logo.png";
+
+    function createDrop() {
+      const img = document.createElement("img");
+      img.src = LOGO_SRC;
+      img.className = "drop";
+
+      const size = Math.random() * 30 + 20;
+      img.style.width = size + "px";
+      img.style.left = Math.random() * 100 + "vw";
+
+      const duration = Math.random() * 10 + 8;
+      img.style.animationDuration = duration + "s";
+
+      rain.appendChild(img);
+      setTimeout(() => img.remove(), duration * 1000);
+    }
+
+    setInterval(createDrop, 350);
+  </script>
 
 </body>
 </html>
