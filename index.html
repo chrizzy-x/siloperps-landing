@@ -148,10 +148,38 @@
       font-size: 0.95rem;
     }
 
-    .cta h2 {
+    /* TOOL CARDS */
+    .card-row {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      perspective: 1000px;
+      flex-wrap: wrap;
+    }
+
+    .tool-card {
+      width: 110px;
+      height: 140px;
+      background: #0b0b0b;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
       color: #ffd977;
-      font-size: 2.5rem;
-      margin-bottom: 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.7);
+      transform: rotateY(-20deg);
+      transition: transform .3s ease;
+    }
+
+    .tool-card:nth-child(2) { transform: rotateY(-10deg); }
+    .tool-card:nth-child(3) { transform: rotateY(0deg); }
+    .tool-card:nth-child(4) { transform: rotateY(10deg); }
+    .tool-card:nth-child(5) { transform: rotateY(20deg); }
+    .tool-card:nth-child(6) { transform: rotateY(30deg); }
+
+    .tool-card:hover {
+      transform: translateY(-6px) scale(1.05);
     }
 
     footer {
@@ -237,9 +265,22 @@
   </section>
 
   <section>
-    <div class="container cta">
-      <h2>The Siloperps ahead</h2>
-      <div class="buttons">
+    <div class="container">
+      <h2 style="font-size:3rem;line-height:1.2;margin-bottom:60px;">
+        <span style="color:#ffd977;">All trading tools</span><br>
+        in one single App
+      </h2>
+
+      <div class="card-row">
+        <div class="tool-card">🇪🇺</div>
+        <div class="tool-card">🪙</div>
+        <div class="tool-card">S&P</div>
+        <div class="tool-card"></div>
+        <div class="tool-card">Ξ</div>
+        <div class="tool-card">₿</div>
+      </div>
+
+      <div class="buttons" style="margin-top:60px;">
         <a href="https://siloperps.com/perp/PERP_ETH_USDC" class="btn" target="_blank">
           Start Trading
         </a>
