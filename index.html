@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Siloperps – Decentralized Perps Trading</title>
+  <title>Siloperps – Trading Unlocked</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
@@ -16,42 +16,40 @@
     body {
       background: radial-gradient(circle at top, #1a1400, #000000 70%);
       color: #f5d98b;
-      overflow: hidden;
+      overflow-x: hidden;
+    }
+
+    section {
+      width: 100%;
+      padding: 80px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 1200px;
+      width: 100%;
     }
 
     .hero {
-      position: relative;
-      height: 100vh;
-      display: flex;
+      min-height: 100vh;
       align-items: center;
-      justify-content: center;
       text-align: center;
-      z-index: 2;
+      padding-top: 120px;
     }
 
-    .hero-content {
-      max-width: 800px;
-      padding: 20px;
-      z-index: 3;
-    }
-
-    .logo {
-      width: 160px;
-      margin-bottom: 30px;
-      filter: drop-shadow(0 0 20px rgba(245,217,139,0.6));
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
       line-height: 1.1;
-      margin-bottom: 20px;
       color: #ffd977;
+      margin-bottom: 20px;
     }
 
-    p {
-      font-size: 1.2rem;
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 40px;
       color: #e8d59a;
-      margin-bottom: 40px;
+      font-size: 1.2rem;
     }
 
     .buttons {
@@ -59,18 +57,18 @@
       gap: 20px;
       justify-content: center;
       flex-wrap: wrap;
+      margin-bottom: 60px;
     }
 
     .btn {
-      padding: 14px 32px;
+      padding: 14px 36px;
       border-radius: 999px;
       border: 1px solid #ffd977;
       background: linear-gradient(135deg, #ffd977, #b58b00);
       color: #000;
       font-weight: 600;
-      cursor: pointer;
-      transition: transform .2s ease, box-shadow .2s ease;
       text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease;
     }
 
     .btn.secondary {
@@ -83,48 +81,90 @@
       box-shadow: 0 10px 40px rgba(255,217,119,0.35);
     }
 
-    .rain {
-      position: fixed;
-      inset: 0;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 1;
+    .hero-image {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-radius: 20px;
+      box-shadow: 0 40px 120px rgba(0,0,0,.8);
     }
 
-    .drop {
-      position: absolute;
-      top: -120px;
-      opacity: 0.15;
-      animation: fall linear infinite;
-      filter: drop-shadow(0 0 10px rgba(255,217,119,0.4));
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      text-align: center;
+      margin-top: 80px;
     }
 
-    @keyframes fall {
-      to {
-        transform: translateY(120vh) rotate(360deg);
-      }
+    .stat h3 {
+      font-size: 2.5rem;
+      color: #ffd977;
     }
 
-    @media (max-width: 600px) {
-      .logo {
-        width: 120px;
-      }
+    .stat p {
+      color: #bfae7a;
+      margin-top: 8px;
+    }
+
+    .tagline {
+      text-align: center;
+      font-size: 2rem;
+      color: #ffd977;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,217,119,0.15);
+      border-radius: 20px;
+      padding: 30px;
+      min-height: 160px;
+    }
+
+    .card h4 {
+      color: #ffd977;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #cbbd8b;
+      font-size: 0.95rem;
+    }
+
+    .cta {
+      text-align: center;
+    }
+
+    .cta h2 {
+      color: #ffd977;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    footer {
+      padding: 60px 20px;
+      text-align: center;
+      color: #8c7a45;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 
 <body>
-  <div class="rain" id="rain"></div>
 
+  <!-- HERO -->
   <section class="hero">
-    <div class="hero-content">
-      <img src="logo.png" alt="Siloperps Logo" class="logo" />
-
-      <h1>Trade Perpetuals at Lightning Speed</h1>
+    <div class="container">
+      <h1>Trading unlocked for everyone</h1>
       <p>
-        Siloperps is a next-generation decentralized exchange for perpetual
-        futures. Wallet-based identity, public trade chats, and real-time
-        execution—on chain.
+        A next-generation decentralized exchange for perpetual futures.
+        Wallet-based identity, public trade chats, and real-time execution—on chain.
       </p>
 
       <div class="buttons">
@@ -135,42 +175,76 @@
         >
           Launch App
         </a>
+        <a href="https://t.me/" class="btn secondary" target="_blank">
+          Join Community
+        </a>
+      </div>
 
+      <img src="landing.png" alt="Trading UI" class="hero-image" />
+
+      <div class="stats">
+        <div class="stat">
+          <h3>200+</h3>
+          <p>Markets</p>
+        </div>
+        <div class="stat">
+          <h3>$22B</h3>
+          <p>Volume</p>
+        </div>
+        <div class="stat">
+          <h3>130k+</h3>
+          <p>Traders</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAGLINE -->
+  <section>
+    <div class="container">
+      <div class="tagline">Less UI. More VOOL.</div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section>
+    <div class="container">
+      <div class="features">
+        <div class="card">
+          <h4>CEX-Grade UX</h4>
+          <p>Lightning-fast interface with professional trading tools.</p>
+        </div>
+        <div class="card">
+          <h4>DeFi Security</h4>
+          <p>Non-custodial, transparent, and fully on-chain.</p>
+        </div>
+        <div class="card">
+          <h4>Mobile First</h4>
+          <p>Designed to trade anywhere, anytime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container cta">
+      <h2>The VOOL ahead</h2>
+      <div class="buttons">
         <a
-          href="https://t.me/"
-          class="btn secondary"
+          href="https://siloperps.com/perp/PERP_ETH_USDC"
+          class="btn"
           target="_blank"
         >
-          Join Community
+          Launch App
         </a>
       </div>
     </div>
   </section>
 
-  <script>
-    const rain = document.getElementById("rain");
-    const LOGO_SRC = "logo.png";
+  <footer>
+    © 2026 Siloperps. All rights reserved.
+  </footer>
 
-    function createDrop() {
-      const img = document.createElement("img");
-      img.src = LOGO_SRC;
-      img.className = "drop";
-
-      const size = Math.random() * 30 + 20;
-      img.style.width = size + "px";
-      img.style.left = Math.random() * 100 + "vw";
-
-      const duration = Math.random() * 10 + 8;
-      img.style.animationDuration = duration + "s";
-
-      rain.appendChild(img);
-
-      setTimeout(() => {
-        img.remove();
-      }, duration * 1000);
-    }
-
-    setInterval(createDrop, 300);
-  </script>
 </body>
 </html>
