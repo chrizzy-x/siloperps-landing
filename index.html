@@ -21,7 +21,7 @@
 
     section {
       width: 100%;
-      padding: 80px 20px;
+      padding: 90px 20px;
       display: flex;
       justify-content: center;
       position: relative;
@@ -95,18 +95,43 @@
       width: 100%;
       max-width: 1000px;
       margin: 0 auto 60px;
-      height: 520px;
+      height: 540px;
     }
 
-    .ui-main {
+    .ui-wrapper {
       position: relative;
       width: 100%;
       max-width: 900px;
       margin: 0 auto;
-      display: block;
+      z-index: 2;
+    }
+
+    .ui-main {
+      width: 100%;
       border-radius: 18px;
       box-shadow: 0 40px 120px rgba(0,0,0,.85);
+      display: block;
+    }
+
+    /* Mask to hide VOOL logo baked into ui.png */
+    .ui-mask {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      width: 150px;
+      height: 60px;
+      background: rgba(0,0,0,0.85);
+      border-radius: 10px;
       z-index: 2;
+    }
+
+    .ui-brand {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      width: 90px;
+      z-index: 3;
+      filter: drop-shadow(0 0 12px rgba(255,217,119,0.6));
     }
 
     .ui-float {
@@ -120,21 +145,12 @@
       z-index: 1;
     }
 
-    .ui-float.left {
-      left: -120px;
-    }
-
-    .ui-float.right {
-      right: -120px;
-    }
+    .ui-float.left { left: -120px; }
+    .ui-float.right { right: -120px; }
 
     @media (max-width: 900px) {
-      .ui-float {
-        display: none;
-      }
-      .hero-stage {
-        height: auto;
-      }
+      .ui-float { display: none; }
+      .hero-stage { height: auto; }
     }
 
     /* STATS */
@@ -251,24 +267,20 @@
       </div>
 
       <div class="hero-stage">
-        <img src="ui.png" class="ui-main" alt="Main UI" />
+        <div class="ui-wrapper">
+          <img src="ui.png" class="ui-main" alt="Main UI" />
+          <div class="ui-mask"></div>
+          <img src="logo.png" class="ui-brand" alt="Brand Logo" />
+        </div>
+
         <img src="ui.png" class="ui-float left" alt="Side UI" />
         <img src="ui.png" class="ui-float right" alt="Side UI" />
       </div>
 
       <div class="stats">
-        <div class="stat">
-          <h3>200+</h3>
-          <p>Markets</p>
-        </div>
-        <div class="stat">
-          <h3>$22B</h3>
-          <p>Volume</p>
-        </div>
-        <div class="stat">
-          <h3>130k+</h3>
-          <p>Traders</p>
-        </div>
+        <div class="stat"><h3>200+</h3><p>Markets</p></div>
+        <div class="stat"><h3>$22B</h3><p>Volume</p></div>
+        <div class="stat"><h3>130k+</h3><p>Traders</p></div>
       </div>
     </div>
   </section>
@@ -282,18 +294,9 @@
   <section>
     <div class="container">
       <div class="features">
-        <div class="card">
-          <h4>CEX-Grade UX</h4>
-          <p>Lightning-fast interface with professional trading tools.</p>
-        </div>
-        <div class="card">
-          <h4>DeFi Security</h4>
-          <p>Non-custodial, transparent, and fully on-chain.</p>
-        </div>
-        <div class="card">
-          <h4>Mobile First</h4>
-          <p>Designed to trade anywhere, anytime.</p>
-        </div>
+        <div class="card"><h4>CEX-Grade UX</h4><p>Lightning-fast interface with professional tools.</p></div>
+        <div class="card"><h4>DeFi Security</h4><p>Non-custodial, transparent, and fully on-chain.</p></div>
+        <div class="card"><h4>Mobile First</h4><p>Trade anywhere, anytime.</p></div>
       </div>
     </div>
   </section>
@@ -303,7 +306,7 @@
       <h2>The Siloperps ahead</h2>
       <div class="buttons">
         <a href="https://siloperps.com/perp/PERP_ETH_USDC" class="btn" target="_blank">
-          Launch App
+          Start Trading
         </a>
       </div>
     </div>
