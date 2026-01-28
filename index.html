@@ -31,12 +31,11 @@
     .container {
       max-width: 1200px;
       width: 100%;
+      text-align: center;
     }
 
-    /* HERO */
     .hero {
       min-height: 100vh;
-      text-align: center;
       padding-top: 120px;
     }
 
@@ -46,15 +45,15 @@
       filter: drop-shadow(0 0 20px rgba(255,217,119,.6));
     }
 
-    .hero h1 {
+    h1 {
       font-size: clamp(2.8rem, 6vw, 4.5rem);
       line-height: 1.1;
       color: #ffd977;
       margin-bottom: 20px;
     }
 
-    .hero p {
-      max-width: 700px;
+    p.lead {
+      max-width: 720px;
       margin: 0 auto 40px;
       color: #e8d59a;
       font-size: 1.2rem;
@@ -89,76 +88,42 @@
       box-shadow: 0 10px 40px rgba(255,217,119,0.35);
     }
 
-    /* HERO STAGE */
+    /* HERO IMAGE */
     .hero-stage {
       position: relative;
-      width: 100%;
       max-width: 1000px;
-      margin: 0 auto 60px;
-      height: 540px;
+      margin: 0 auto 80px;
     }
 
-    .ui-wrapper {
-      position: relative;
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-      z-index: 2;
-    }
-
-    .ui-main {
+    .hero-img {
       width: 100%;
       border-radius: 18px;
       box-shadow: 0 40px 120px rgba(0,0,0,.85);
       display: block;
     }
 
-    /* Mask to hide VOOL logo baked into ui.png */
-    .ui-mask {
+    .hero-mask {
       position: absolute;
-      top: 12px;
-      left: 12px;
-      width: 150px;
-      height: 60px;
-      background: rgba(0,0,0,0.85);
+      top: 14px;
+      left: 18px;
+      width: 180px;
+      height: 70px;
+      background: rgba(0,0,0,0.9);
       border-radius: 10px;
-      z-index: 2;
     }
 
-    .ui-brand {
+    .hero-brand {
       position: absolute;
-      top: 18px;
-      left: 18px;
+      top: 22px;
+      left: 26px;
       width: 90px;
-      z-index: 3;
       filter: drop-shadow(0 0 12px rgba(255,217,119,0.6));
     }
 
-    .ui-float {
-      position: absolute;
-      top: 60%;
-      width: 260px;
-      border-radius: 16px;
-      box-shadow: 0 30px 80px rgba(0,0,0,.9);
-      opacity: 0.9;
-      transform: translateY(-50%);
-      z-index: 1;
-    }
-
-    .ui-float.left { left: -120px; }
-    .ui-float.right { right: -120px; }
-
-    @media (max-width: 900px) {
-      .ui-float { display: none; }
-      .hero-stage { height: auto; }
-    }
-
-    /* STATS */
     .stats {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 40px;
-      text-align: center;
       margin-top: 40px;
     }
 
@@ -173,7 +138,6 @@
     }
 
     .tagline {
-      text-align: center;
       font-size: 2rem;
       color: #ffd977;
     }
@@ -182,6 +146,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 30px;
+      text-align: left;
     }
 
     .card {
@@ -189,7 +154,6 @@
       border: 1px solid rgba(255,217,119,0.15);
       border-radius: 20px;
       padding: 30px;
-      min-height: 160px;
     }
 
     .card h4 {
@@ -200,10 +164,6 @@
     .card p {
       color: #cbbd8b;
       font-size: 0.95rem;
-    }
-
-    .cta {
-      text-align: center;
     }
 
     .cta h2 {
@@ -252,7 +212,7 @@
       <img src="logo.png" class="hero-logo" alt="Siloperps Logo" />
 
       <h1>Trading unlocked for everyone</h1>
-      <p>
+      <p class="lead">
         A next-generation decentralized exchange for perpetual futures.
         Wallet-based identity, public trade chats, and real-time execution—on chain.
       </p>
@@ -267,14 +227,9 @@
       </div>
 
       <div class="hero-stage">
-        <div class="ui-wrapper">
-          <img src="ui.png" class="ui-main" alt="Main UI" />
-          <div class="ui-mask"></div>
-          <img src="logo.png" class="ui-brand" alt="Brand Logo" />
-        </div>
-
-        <img src="ui.png" class="ui-float left" alt="Side UI" />
-        <img src="ui.png" class="ui-float right" alt="Side UI" />
+        <img src="hero.png" class="hero-img" alt="Trading UI" />
+        <div class="hero-mask"></div>
+        <img src="logo.png" class="hero-brand" alt="Brand" />
       </div>
 
       <div class="stats">
