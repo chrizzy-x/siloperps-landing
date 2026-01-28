@@ -21,7 +21,7 @@
 
     section {
       width: 100%;
-      padding: 90px 20px;
+      padding: 70px 20px;
       display: flex;
       justify-content: center;
       position: relative;
@@ -29,51 +29,54 @@
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1100px;
       width: 100%;
       text-align: center;
     }
 
     .hero {
       min-height: 100vh;
-      padding-top: 120px;
+      padding-top: 90px;
     }
 
     .hero-logo {
-      width: 140px;
-      margin-bottom: 30px;
-      filter: drop-shadow(0 0 20px rgba(255,217,119,.6));
+      width: 110px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 14px rgba(255,217,119,.5));
     }
 
     h1 {
-      font-size: clamp(2.8rem, 6vw, 4.5rem);
-      line-height: 1.1;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      line-height: 1.15;
       color: #ffd977;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+      font-weight: 700;
     }
 
     p.lead {
-      max-width: 720px;
-      margin: 0 auto 40px;
+      max-width: 640px;
+      margin: 0 auto 28px;
       color: #e8d59a;
-      font-size: 1.2rem;
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
     .buttons {
       display: flex;
-      gap: 16px;
+      gap: 12px;
       justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: 60px;
+      margin-bottom: 40px;
     }
 
     .btn {
-      padding: 14px 32px;
+      padding: 10px 22px;
       border-radius: 999px;
       border: 1px solid #ffd977;
       background: linear-gradient(135deg, #ffd977, #b58b00);
       color: #000;
       font-weight: 600;
+      font-size: 0.85rem;
       text-decoration: none;
       transition: transform .2s ease, box-shadow .2s ease;
     }
@@ -85,87 +88,90 @@
 
     .btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 40px rgba(255,217,119,0.35);
+      box-shadow: 0 10px 30px rgba(255,217,119,0.3);
     }
 
     .hero-stage {
       position: relative;
-      max-width: 1000px;
-      margin: 0 auto 80px;
+      max-width: 900px;
+      margin: 0 auto 60px;
     }
 
     .hero-img {
       width: 100%;
-      border-radius: 18px;
-      box-shadow: 0 40px 120px rgba(0,0,0,.85);
+      border-radius: 16px;
+      box-shadow: 0 30px 90px rgba(0,0,0,.85);
       display: block;
     }
 
     .stats {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
-      margin-top: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
     }
 
     .stat h3 {
-      font-size: 2.5rem;
+      font-size: 1.8rem;
       color: #ffd977;
     }
 
     .stat p {
       color: #bfae7a;
-      margin-top: 8px;
+      margin-top: 6px;
+      font-size: 0.85rem;
     }
 
     .tagline {
-      font-size: 2rem;
+      font-size: 1.4rem;
       color: #ffd977;
     }
 
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
       text-align: left;
     }
 
     .card {
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,217,119,0.15);
-      border-radius: 20px;
-      padding: 30px;
+      border-radius: 16px;
+      padding: 24px;
     }
 
     .card h4 {
       color: #ffd977;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+      font-size: 1rem;
     }
 
     .card p {
       color: #cbbd8b;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
+      line-height: 1.5;
     }
 
     .card-row {
       display: flex;
       justify-content: center;
-      gap: 18px;
+      gap: 14px;
       perspective: 1000px;
       flex-wrap: wrap;
     }
 
     .tool-card {
-      width: 110px;
-      height: 140px;
+      width: 90px;
+      height: 120px;
       background: #0b0b0b;
-      border-radius: 18px;
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.2rem;
+      font-size: 1.6rem;
       color: #ffd977;
-      box-shadow: 0 20px 60px rgba(0,0,0,.7);
+      box-shadow: 0 16px 40px rgba(0,0,0,.7);
       transform: rotateY(-20deg);
       transition: transform .3s ease;
     }
@@ -177,14 +183,14 @@
     .tool-card:nth-child(6) { transform: rotateY(30deg); }
 
     .tool-card:hover {
-      transform: translateY(-6px) scale(1.05);
+      transform: translateY(-4px) scale(1.05);
     }
 
     footer {
-      padding: 60px 20px;
+      padding: 50px 20px;
       text-align: center;
       color: #8c7a45;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
 
     .rain {
@@ -199,7 +205,7 @@
       top: -120px;
       opacity: 0.12;
       animation: fall linear infinite;
-      filter: drop-shadow(0 0 10px rgba(255,217,119,0.4));
+      filter: drop-shadow(0 0 8px rgba(255,217,119,0.4));
     }
 
     @keyframes fall {
@@ -220,19 +226,17 @@
 
       <h1>Trading unlocked for everyone</h1>
       <p class="lead">
-  A next-generation decentralized exchange for perpetual futures.
-  Wallet-based identity, AI-powered market analysis, public trade chats,
-  and real-time execution—fully on-chain.
-</p>
+        A next-generation decentralized exchange for perpetual futures.
+        Wallet-based identity, AI-powered market analysis, public trade chats,
+        and real-time execution—fully on-chain.
+      </p>
 
-
-   <div class="buttons">
-  <a href="https://siloperps.com/perp/PERP_ETH_USDC" class="btn" target="_blank">Launch App</a>
-  <a href="https://x.com/PerpsSilo" class="btn secondary" target="_blank">Follow on X</a>
-  <a href="https://t.me/PerpsSilo" class="btn secondary" target="_blank">Join Telegram</a>
-  <a href="https://medium.com/@PerpsSilo/siloperps-the-meme-perpetual-dex-959565b72712" class="btn secondary" target="_blank">Read Whitepaper</a>
-</div>
-
+      <div class="buttons">
+        <a href="https://siloperps.com/perp/PERP_ETH_USDC" class="btn" target="_blank">Launch App</a>
+        <a href="https://x.com/PerpsSilo" class="btn secondary" target="_blank">Follow on X</a>
+        <a href="https://t.me/PerpsSilo" class="btn secondary" target="_blank">Join Telegram</a>
+        <a href="https://medium.com/@PerpsSilo/siloperps-the-meme-perpetual-dex-959565b72712" class="btn secondary" target="_blank">Whitepaper</a>
+      </div>
 
       <div class="hero-stage">
         <img src="hero.png" class="hero-img" alt="Trading UI" />
@@ -257,14 +261,14 @@
       <div class="features">
         <div class="card"><h4>CEX-Grade UX</h4><p>Lightning-fast interface with professional tools.</p></div>
         <div class="card"><h4>DeFi Security</h4><p>Non-custodial, transparent, and fully on-chain.</p></div>
-        <div class="card"><h4>Mobile First</h4><p>Trade anywhere, anytime.</p></div>
+        <div class="card"><h4>AI Insights</h4><p>Smart analysis to help you spot opportunities faster.</p></div>
       </div>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <h2 style="font-size:3rem;line-height:1.2;margin-bottom:60px;">
+      <h2 style="font-size:2rem;line-height:1.2;margin-bottom:40px;">
         <span style="color:#ffd977;">All trading tools</span><br>
         in one single App
       </h2>
@@ -278,7 +282,7 @@
         <div class="tool-card">₿</div>
       </div>
 
-      <div class="buttons" style="margin-top:60px;">
+      <div class="buttons" style="margin-top:40px;">
         <a href="https://siloperps.com/perp/PERP_ETH_USDC" class="btn" target="_blank">
           Start Trading
         </a>
@@ -298,7 +302,7 @@
       const img = document.createElement("img");
       img.src = LOGO_SRC;
       img.className = "drop";
-      const size = Math.random() * 30 + 20;
+      const size = Math.random() * 26 + 16;
       img.style.width = size + "px";
       img.style.left = Math.random() * 100 + "vw";
       const duration = Math.random() * 10 + 8;
@@ -307,7 +311,7 @@
       setTimeout(() => img.remove(), duration * 1000);
     }
 
-    setInterval(createDrop, 350);
+    setInterval(createDrop, 420);
   </script>
 
 </body>
