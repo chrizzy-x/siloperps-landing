@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Siloperps – Trading Unlocked</title>
+  <title>Siloperps — Decentralized Perpetual Trading</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="logo.png" type="image/png" />
 
   <style>
     * {
@@ -15,203 +17,142 @@
     }
 
     body {
-      background: radial-gradient(circle at top, #1a1400, #000000 70%);
+      background: radial-gradient(circle at top, #1a1400, #000 70%);
       color: #f5d98b;
-      overflow-x: hidden;
-    }
-
-    section {
-      width: 100%;
-      padding: 70px 20px;
-      display: flex;
-      justify-content: center;
-      position: relative;
-      z-index: 2;
-    }
-
-    .container {
-      max-width: 1100px;
-      width: 100%;
-      text-align: center;
-    }
-
-    .hero {
-      min-height: 100vh;
-      padding-top: 90px;
-    }
-
-    .hero-logo {
-      width: 110px;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 0 14px rgba(255,217,119,.5));
-    }
-
-    h1 {
-      font-size: clamp(2rem, 4.5vw, 3rem);
-      line-height: 1.15;
-      color: #ffd977;
-      margin-bottom: 16px;
-      font-weight: 700;
-    }
-
-    p.lead {
-      max-width: 640px;
-      margin: 0 auto 28px;
-      color: #e8d59a;
-      font-size: 1rem;
       line-height: 1.6;
     }
 
-    .buttons {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
-
-    .btn {
-      padding: 10px 22px;
-      border-radius: 999px;
-      border: 1px solid #ffd977;
-      background: linear-gradient(135deg, #ffd977, #b58b00);
-      color: #000;
-      font-weight: 600;
-      font-size: 0.85rem;
+    a {
       text-decoration: none;
-      transition: transform .2s ease, box-shadow .2s ease;
+      color: inherit;
     }
 
-    .btn.secondary {
-      background: transparent;
-      color: #ffd977;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(255,217,119,0.3);
-    }
-
-    .hero-stage {
-      position: relative;
-      max-width: 900px;
-      margin: 0 auto 60px;
-    }
-
-    .hero-img {
-      width: 100%;
-      border-radius: 16px;
-      box-shadow: 0 30px 90px rgba(0,0,0,.85);
-      display: block;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .stat h3 {
-      font-size: 1.8rem;
-      color: #ffd977;
-    }
-
-    .stat p {
-      color: #bfae7a;
-      margin-top: 6px;
-      font-size: 0.85rem;
-    }
-
-    .tagline {
-      font-size: 1.4rem;
-      color: #ffd977;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-      text-align: left;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,217,119,0.15);
-      border-radius: 16px;
-      padding: 24px;
-    }
-
-    .card h4 {
-      color: #ffd977;
-      margin-bottom: 8px;
-      font-size: 1rem;
-    }
-
-    .card p {
-      color: #cbbd8b;
-      font-size: 0.85rem;
-      line-height: 1.5;
-    }
-
-    .card-row {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      perspective: 1000px;
-      flex-wrap: wrap;
-    }
-
-    .tool-card {
-      width: 90px;
-      height: 120px;
-      background: #0b0b0b;
-      border-radius: 14px;
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.6rem;
-      color: #ffd977;
-      box-shadow: 0 16px 40px rgba(0,0,0,.7);
-      transform: rotateY(-20deg);
-      transition: transform .3s ease;
-    }
-
-    .tool-card:nth-child(2) { transform: rotateY(-10deg); }
-    .tool-card:nth-child(3) { transform: rotateY(0deg); }
-    .tool-card:nth-child(4) { transform: rotateY(10deg); }
-    .tool-card:nth-child(5) { transform: rotateY(20deg); }
-    .tool-card:nth-child(6) { transform: rotateY(30deg); }
-
-    .tool-card:hover {
-      transform: translateY(-4px) scale(1.05);
-    }
-
-    footer {
-      padding: 50px 20px;
+      padding: 80px 20px;
       text-align: center;
-      color: #8c7a45;
-      font-size: 0.8rem;
     }
 
-    .rain {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
+    .hero-content {
+      max-width: 900px;
     }
 
-    .drop {
-      position: absolute;
-      top: -120px;
-      opacity: 0.12;
-      animation: fall linear infinite;
-      filter: drop-shadow(0 0 8px rgba(255,217,119,0.4));
+    h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: #ffd977;
+      margin-bottom: 16px;
     }
 
-    @keyframes fall {
-      to {
-        transform: translateY(120vh) rotate(360deg);
+    .hero p {
+      font-size: 1rem;
+      color: #e6d7a2;
+      max-width: 720px;
+      margin: 0 auto 32px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 14px 36px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ffd977, #b58b00);
+      color: #000;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(255, 217, 119, 0.35);
+    }
+
+    /* ===== STATS ===== */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin: 80px auto;
+      max-width: 1000px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .stat h3 {
+      font-size: 2rem;
+      color: #ffd977;
+      margin-bottom: 6px;
+    }
+
+    .stat p {
+      font-size: 0.9rem;
+      color: #cbbd8b;
+    }
+
+    /* ===== FEATURES ===== */
+    .features {
+      max-width: 1100px;
+      margin: 100px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 24px;
+      transition: transform 0.2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .feature-card h4 {
+      font-size: 1.05rem;
+      color: #ffd977;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      font-size: 0.9rem;
+      color: #d6c99a;
+    }
+
+    /* ===== SECTION TITLE ===== */
+    .section-title {
+      text-align: center;
+      margin: 120px 20px 40px;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      color: #ffd977;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      font-size: 0.95rem;
+      color: #d6c99a;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 60px 20px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #b9ad7c;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
       }
     }
   </style>
@@ -219,106 +160,69 @@
 
 <body>
 
-  <div class="rain" id="rain"></div>
-
+  <!-- HERO -->
   <section class="hero">
-    <div class="container">
-      <img src="logo.png" class="hero-logo" alt="Siloperps Logo" />
-
-      <h1>Trading unlocked for everyone</h1>
-      <p class="lead">
-        A next-generation decentralized exchange for perpetual futures.
-        Wallet-based identity, AI-powered market analysis, public trade chats,
-        and real-time execution—fully on-chain.
+    <div class="hero-content">
+      <h1>Trading Unlocked for Everyone</h1>
+      <p>
+        Siloperps is a decentralized perpetual futures exchange built for speed,
+        transparency, and real-time execution. Trade with wallet-based identity,
+        public trade chats, and AI-powered market analysis — fully on-chain.
       </p>
 
-      <div class="buttons" style="margin-bottom:20px;">
-        <a href="https://siloPerps.com/perp/PERP_ETH_USDC" class="btn" target="_blank">
-         LAUNCH APP
-        </a>
-      </div>
-
-      <div class="buttons">
-        <a href="https://x.com/PerpsSilo" class="btn secondary" target="_blank">follow on x</a>
-        <a href="https://t.me/PerpsSilo" class="btn secondary" target="_blank">join telegram</a>
-        <a href="https://medium.com/@PerpsSilo/siloperps-the-meme-perpetual-dex-959565b72712" class="btn secondary" target="_blank">whitepaper</a>
-      </div>
-
-      <div class="hero-stage">
-        <img src="hero.png" class="hero-img" alt="Trading UI" />
-      </div>
-
-      <div class="stats">
-        <div class="stat"><h3>10M+</h3><p>volume</p></div>
-        <div class="stat"><h3>500+</h3><p>traders</p></div>
-        <div class="stat"><h3>live</h3><p>on mainnet</p></div>
-      </div>
+      <a
+        href="https://app.siloperps.com/perp/PERP_ETH_USDC"
+        class="btn-primary"
+        target="_blank"
+        rel="noopener"
+      >
+        Launch App
+      </a>
     </div>
   </section>
 
-  <section>
-    <div class="container">
-      <div class="tagline">Less UI. More Siloperps.</div>
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stat">
+      <h3>200+</h3>
+      <p>Markets</p>
+    </div>
+    <div class="stat">
+      <h3>10M+</h3>
+      <p>Volume</p>
+    </div>
+    <div class="stat">
+      <h3>500+</h3>
+      <p>Traders</p>
     </div>
   </section>
 
-  <section>
-    <div class="container">
-      <div class="features">
-        <div class="card"><h4>cex-grade ux</h4><p>Lightning-fast interface with professional tools.</p></div>
-        <div class="card"><h4>defi security</h4><p>Non-custodial, transparent, and fully on-chain.</p></div>
-        <div class="card"><h4>ai insights</h4><p>Smart analysis to help you spot opportunities faster.</p></div>
-      </div>
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="feature-card">
+      <h4>CEX-Grade UX</h4>
+      <p>Lightning-fast interface with professional trading tools.</p>
+    </div>
+    <div class="feature-card">
+      <h4>DeFi Security</h4>
+      <p>Non-custodial, transparent, and fully on-chain execution.</p>
+    </div>
+    <div class="feature-card">
+      <h4>AI Market Analysis</h4>
+      <p>Smart insights and data-driven signals to support trading decisions.</p>
     </div>
   </section>
 
-  <section>
-    <div class="container">
-      <h2 style="font-size:2rem;line-height:1.2;margin-bottom:40px;">
-        <span style="color:#ffd977;">All trading tools</span><br>
-        in one single app
-      </h2>
+  <!-- FUTURE -->
+  <div class="section-title">
+    <h2>Less UI. More Siloperps.</h2>
+    <p>All trading tools in one single app.</p>
+  </div>
 
-      <div class="card-row">
-        <div class="tool-card">🇪🇺</div>
-        <div class="tool-card">🪙</div>
-        <div class="tool-card">S&P</div>
-        <div class="tool-card"></div>
-        <div class="tool-card">Ξ</div>
-        <div class="tool-card">₿</div>
-      </div>
-
-      <div class="buttons" style="margin-top:40px;">
-        <a href="https://siloperps.com/perp/PERP_ETH_USDC" class="btn" target="_blank">
-          start trading
-        </a>
-      </div>
-    </div>
-  </section>
-
+  <!-- FOOTER -->
   <footer>
-    © 2026 SiloPerps. All rights reserved.
+    © 2026 Siloperps. All rights reserved.
   </footer>
-
-  <script>
-    const rain = document.getElementById("rain");
-    const LOGO_SRC = "logo.png";
-
-    function createDrop() {
-      const img = document.createElement("img");
-      img.src = LOGO_SRC;
-      img.className = "drop";
-      const size = Math.random() * 26 + 16;
-      img.style.width = size + "px";
-      img.style.left = Math.random() * 100 + "vw";
-      const duration = Math.random() * 10 + 8;
-      img.style.animationDuration = duration + "s";
-      rain.appendChild(img);
-      setTimeout(() => img.remove(), duration * 1000);
-    }
-
-    setInterval(createDrop, 420);
-  </script>
 
 </body>
 </html>
