@@ -177,6 +177,28 @@
       box-shadow: 0 16px 40px rgba(0,0,0,.7);
     }
 
+    /* Falling logo background */
+    .rain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .drop {
+      position: absolute;
+      top: -120px;
+      opacity: 0.12;
+      animation: fall linear infinite;
+      filter: drop-shadow(0 0 8px rgba(255,217,119,0.4));
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(120vh) rotate(360deg);
+      }
+    }
+
     footer {
       padding: 50px 20px;
       text-align: center;
@@ -187,6 +209,9 @@
 </head>
 
 <body>
+
+  <!-- Falling logos -->
+  <div class="rain" id="rain"></div>
 
   <section class="hero">
     <div class="container">
@@ -276,6 +301,29 @@
   <footer>
     © 2026 SiloPerps. All Rights Reserved.
   </footer>
+
+  <script>
+    const rain = document.getElementById("rain");
+    const LOGO_SRC = "logo.png";
+
+    function createDrop() {
+      const img = document.createElement("img");
+      img.src = LOGO_SRC;
+      img.className = "drop";
+
+      const size = Math.random() * 26 + 16;
+      img.style.width = size + "px";
+      img.style.left = Math.random() * 100 + "vw";
+
+      const duration = Math.random() * 10 + 8;
+      img.style.animationDuration = duration + "s";
+
+      rain.appendChild(img);
+      setTimeout(() => img.remove(), duration * 1000);
+    }
+
+    setInterval(createDrop, 420);
+  </script>
 
 </body>
 </html>
